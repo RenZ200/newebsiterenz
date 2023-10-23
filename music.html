@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Music Playlist</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #f7f7f7;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+h1 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.music-list {
+  list-style: none;
+  padding: 0;
+}
+
+.music-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+
+.music-item:hover {
+  transform: scale(1.02);
+}
+
+.music-cover {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.music-details {
+  margin-left: 20px;
+  text-align: left;
+}
+
+.music-title {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.music-artist {
+  font-size: 1em;
+  color: #666;
+}
+
+.audio-player {
+  width: 100%;
+  min-width: 200px;
+  max-width: 300px;
+}
+
+.back-button {
+  margin-bottom: 20px;
+}
+
+.back-button a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1em;
+  transition: background-color 0.2s;
+}
+
+.back-button a:hover {
+  background-color: #0056b3;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>My Music Playlist</h1>
+  
+  <div class="back-button">
+    <a href="index.html">Back to Homepage</a>
+  </div>
+  
+  <ul class="music-list">
+    <li class="music-item">
+      <img src="https://upload.wikimedia.org/wikipedia/en/thumb/0/0e/GreenDay21Guns.jpg/220px-GreenDay21Guns.jpg" alt="Song 2 Cover" class="music-cover">
+      <div class="music-details">
+        <p class="music-title">21 Guns</p>
+        <p class="music-artist">Green Day</p>
+      </div>
+      <audio class="audio-player" controls>
+        <source src="greenday.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+    </li>
+    
+    <li class="music-item">
+      <img src="https://upload.wikimedia.org/wikipedia/id/1/17/Wonderwall_cover.jpg" alt="Song 2 Cover" class="music-cover">
+      <div class="music-details">
+        <p class="music-title">Wonderwall</p>
+        <p class="music-artist">Oasis</p>
+      </div>
+      <audio class="audio-player" controls>
+        <source src="oasis.mp3" type="audio/mpeg">
+      </audio>
+    
+    </li>
+    <li class="music-item">
+        <img src="https://i1.sndcdn.com/artworks-000120203596-ig35op-t500x500.jpg" alt="Song 2 Cover" class="music-cover">
+        <div class="music-details">
+          <p class="music-title">Ob-La-Di, Ob-La-Da</p>
+          <p class="music-artist">The Beatles</p>
+        </div>
+        <audio class="audio-player" controls>
+          <source src="obladioblada.mp3" type="audio/mpeg">
+        </audio>
+      </li>
+    </li>
+    <li class="music-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAe1BMVEX///8AAAC7u7u2trbExMTx8fF1dXWrq6t6enqampre3t5ISEiysrLIyMjOzs5qamqGhobq6urU1NQeHh4/Pz/b29vl5eVRUVGioqJaWlpra2sUFBRfX19/f3/4+PiOjo4zMzMpKSkwMDCbm5tMTEwcHBwMDAw8PDwkJCT176UkAAAGCklEQVR4nO2baXuiMBRGQUFcQSy4C9p2pv3/v3AkubkJi1snFvV5zycMW07IdgM6DgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAT0gYMEufUwMjtcXMWWHianTqSicm7eXNEtploROXOvXpn6Hzzi47nWg82bS9rFlizS4fOnHYVHWflZxdxjrRfyXDD3bpGKmcuGktY9YIWGZipHLivqVsWWR83nDUWsas0T1vuDh54tPQOW+4bS1j1rhgGLWWMWtcMFy3ljFreOcNe61lzBowbC1j1rhg2G8tY9bQhqGR+pqGwTBVDA3DSTDumoxT+duT54+LX2Pz+Xt5PlDkQ7Utdk3E5nI+2q57/d462q5Wq94HBWhx9UZD24aN9OsH0AP+lOdPi+0384pz49idqg2yLgwp8at8xW9ZQNUbdX/JsHZjOoWiDrEcMC9d0lgDcZxeKbdiu2NMholpsbNXSZz9luGmnHKci/8RG5k4v4gvKxMfPYk49sQDuUWN/FBsT5xUJu7XfVUaRS0eVO4d/5ZhIreWcRzP0zDfqmUcWcRRvbB1/DzgJR865Eva0hHFqkJIh6YcyI38442Gs66t4Puy4UJuqVZxzEoslcXPv259HYDPDjjb1Gsk0jZz9RUoBB9xmKPCGUsdzRWGVJGMRQ65fCXqZvE0dtVrfquzuxx/UnZH9Dy5AHR5pKp22w7YtGE01ZiG27qhbDHFVpGrSfWaiTrb4wczNwxTZSUvSTeb3t/w1IjfYJhyrnduw2LVpzp7ct5QVnxqiZv7G56atUV1Q4dTjs1wVbvmyrgkGcaG4VBdv1O6me+19QybDPtFSk+O7kHtmlvDsHPZkMb/8KEM5VlyLKgPW9Fthn35K5i0bFieQ4mkeZHjN6cGr6NfZ0hDZt624SCdzUJvSnVSDJJBcdz0jKHHhv4ZQzqkR13O6Hij2SSwtkJ0tSFBlVWU+9qrnEbwBPM6w5n8tQ1dk8+WDWUAUag0XJMNO1cZUjCyuruhObu8aChma6Lk/9+QZqmLdgx7bHhIkmSvxwbqABvGipsNs7Lh3+ONvt7svXy+2lCqxOooFSI1hThs2L3KkH6pWkpqXkuGDBV8w1jxU8NI9aW21K4zXJ8ypJlIw1hhGI5vMey3Yxg1z2kcFV/U4oqfG+ZkaK2Luc5we9JQjmKN12TD4Jae5v6ztkbD1UlDEeg3NsNbDeWSgRve3dD8roQTFyfmpTROf9swpHUpFT3VozFbho3PMDlv+H7ecMmG2RlDyoLTjuE7R3udyonCcH/R0Ks/w7lqeVRoci2qpwrD9mvnC/PSzXnDr4uGNK2micFe2volQ7mY593LsPEdcMaJLq9JsGEma5xYoW+eWrHhB086qZFv5CWpb5FDrK9u1K0azpsufjP6exrjIcWm4aK8O6PlfGHYPDqz4UBJmav6I/6qbGkcveSFRzbcVavNz9BL6cakJdWGvmw7Rsf3bhxzhaFcLNyLHR4l0tguEuX+Pw4XtjLcHhusjaeoX4fkOtFYJh7KtiNqXBwuV/zxgmhgoh1G3JE0GVL0l3jDdEllpj/i2apFq0KFVjOOJZil3SJ2cQ42OtYDuxjLBsY7kgn3Om9Gth31HIqtXXVqw4Z5uQwFRdWcuhVEP55XEg+xa+HLQaNPMT7SM96PLbPKfV0Ka2QXVfQ6UbX7KxtyKKmT3stXXPnVuwoiK4bmmzxd6c271971mS9ZROs8VOOOiqEzz+lNxmYn7uG7b4rvZL2k+/rVG+XHBvL/X0r4BplKzIzEky/xYrlflEe5GWpDI7aap+k8c27Fv3zIL5DW4p0mw2cmWFRfR7Nh7b3bqwDD5+fV2mGd6mjxevD7w+f/w80JDsrQTnDweOh53vP/pagZHXK2nRPb0KRMP8IX+CtDmXFUTGJD/R3cyzXDIp7aG7HBvu0MWafjlrH0beEDUTG09eXdA1Ey7N0eDD4++r+1yeAxQlf7xGGn2wntLOQCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAemH/wzkPOmoILSQAAAABJRU5ErkJggg==" alt="Song 2 Cover" class="music-cover">
+        <div class="music-details">
+          <p class="music-title">Hey Jude</p>
+          <p class="music-artist">The Beatles</p>
+        </div>
+        <audio class="audio-player" controls>
+          <source src="hey jude.mp3" type="audio/mpeg">
+        </audio>
+      </li>
+    <!-- Add more music items as needed -->
+  </ul>
+</div>
+
+</body>
+</html>
